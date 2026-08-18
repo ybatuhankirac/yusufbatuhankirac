@@ -13,7 +13,6 @@
         nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s, opacity 0.3s; }
         nav a:hover { color: #888; opacity: 0.7; }
         
-        /* Tüm sayfa için tek bir Smooth Fade-in Animasyonu */
         @keyframes smoothFadeUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -21,12 +20,11 @@
 
         .container { max-width: 1200px; margin: 60px auto; padding: 0 40px; display: flex; gap: 60px; align-items: flex-start; }
         
-        /* Fotoğraf ve İçerik Aynı Anda Smooth Bir Şekilde Yüklenecek */
         .profile-image { 
             flex: 0 0 450px; 
             height: 600px; 
             background-color: #eee; 
-            background-image: url('profil.jpg'); 
+            background-image: url('profil.jpeg'); 
             background-size: cover; 
             background-position: center;
             border-radius: 6px;
@@ -38,7 +36,7 @@
         .content { 
             flex: 1; 
             opacity: 0;
-            animation: smoothFadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards; /* Fotoğraftan çok kısa bir süre sonra komple yüklenir */
+            animation: smoothFadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards; 
         }
 
         h1 { font-size: 32px; font-weight: normal; letter-spacing: 4px; margin-bottom: 5px; text-transform: uppercase; }
@@ -50,8 +48,9 @@
         .list-year { width: 150px; color: #666; font-size: 14px; flex-shrink: 0; }
         .list-details { flex: 1; }
 
-        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; opacity: 0; animation: smoothFadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards; }
-        footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 15px; opacity: 0; animation: smoothFadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards; }
+        .social-links { display: flex; justify-content: center; gap: 25px; }
+        footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; text-transform: uppercase; }
         footer a:hover { color: #000; }
 
         @media (max-width: 900px) {
@@ -91,7 +90,6 @@
             <div class="subtitle">Oyuncu & Sahne Sanatları</div>
 
             <div class="section-title">Eğitim</div>
-            <!-- Boşluklar eklendi -->
             <div class="list-item"><div class="list-year">Mezun (Onur Der.)</div><div class="list-details"> Bahçeşehir Üniversitesi – Sahne Sanatları Tiyatro Bölümü</div></div>
             <div class="list-item"><div class="list-year">Mezun (Okul Der.)</div><div class="list-details"> Mimar Sinan Güzel Sanatlar Lisesi Tiyatro Bölümü</div></div>
 
@@ -101,6 +99,7 @@
             <div class="list-item"><div class="list-year">Oyuncu</div><div class="list-details">Küçük Ağa</div></div>
 
             <div class="section-title">Filmler</div>
+            <div class="list-item"><div class="list-year">Oyuncu</div><div class="list-details">Su Koruyucuları: Okula Dönüş</div></div>
             <div class="list-item"><div class="list-year">Oyuncu</div><div class="list-details">Can Dostlar</div></div>
             <div class="list-item"><div class="list-year">Oyuncu</div><div class="list-details">Hayat Dediğin: İki Hayat Bir Can</div></div>
 
@@ -121,7 +120,10 @@
     </div>
 
     <footer>
-        <a href="https://instagram.com/batuhan.kirac_" target="_blank">Instagram: @batuhan.kirac_</a>
+        <div class="social-links">
+            <a href="https://instagram.com/batuhan.kirac_" target="_blank">Instagram: @batuhan.kirac_</a>
+            <a href="https://www.imdb.com/name/nm9898006/?ref_=ext_shr_lnk" target="_blank">IMDb Profili</a>
+        </div>
         <span>© 2026 Yusuf Batuhan Kıraç. Tüm Hakları Saklıdır.</span>
     </footer>
 
