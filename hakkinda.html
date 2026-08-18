@@ -24,8 +24,16 @@
         
         .about-text { font-size: 16px; color: #444; margin-bottom: 50px; text-align: justify; line-height: 1.9; }
         
-        .imdb-btn { display: inline-block; margin-top: 25px; padding: 12px 25px; background-color: #f5c518; color: #000; font-weight: bold; text-decoration: none; border-radius: 4px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; }
-        .imdb-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); background-color: #e3b716; }
+        /* Yan Yana Butonlar İçin Tasarım */
+        .btn-group { display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+        .profile-btn { display: inline-block; padding: 12px 25px; font-weight: bold; text-decoration: none; border-radius: 4px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; }
+        .profile-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        .imdb-btn { background-color: #f5c518; color: #000; }
+        .imdb-btn:hover { background-color: #e3b716; }
+        
+        .youtube-btn { background-color: #ff0000; color: #fff; }
+        .youtube-btn:hover { background-color: #d90000; }
 
         .details-grid { display: flex; gap: 50px; margin-top: 20px; }
         .details-col { flex: 1; }
@@ -48,6 +56,7 @@
             nav a { margin: 0; font-size: 11px; }
             .container { margin: 40px auto; }
             .details-grid { flex-direction: column; gap: 40px; }
+            .btn-group { justify-content: center; }
         }
     </style>
 </head>
@@ -66,7 +75,11 @@
         <h1>Hakkında</h1>
         <div class="about-text">
             <p>2004 doğumlu olan Yusuf Batuhan Kıraç, 1.78 boyunda ve 75 kilogramdır. Oyunculuk serüvenine henüz 7 yaşındayken adım atan Kıraç için erken yaşlarda bir hobi olarak başlayan tiyatro, zamanla profesyonel bir mesleğe dönüşmüştür. Kariyeri boyunca dahil olduğu projelerde sürekli gelişim göstermeyi ve en iyi performansı sergilemeyi ilke edinen oyuncu; aktif bir şekilde tiyatro ekipleriyle çalışmakta, oyunculuk faaliyetlerini sürdürmekte, eğitim kurumlarında ve çevrimiçi platformlarda dersler vermektedir.</p>
-            <a href="https://www.imdb.com/name/nm9898006/?ref_=ext_shr_lnk" target="_blank" class="imdb-btn">IMDb Profilini Görüntüle</a>
+            
+            <div class="btn-group">
+                <a href="https://www.imdb.com/name/nm9898006/?ref_=ext_shr_lnk" target="_blank" class="profile-btn imdb-btn">IMDb Profilini Görüntüle</a>
+                <a href="https://youtube.com/@yusufbatuhankrac8047?si=PFyNIbL9SMADGZNs" target="_blank" class="profile-btn youtube-btn">YouTube Kanalı</a>
+            </div>
         </div>
 
         <div class="details-grid">
