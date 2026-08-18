@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkında - Yusuf Batuhan Kıraç</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #fdfdfd; color: #222; line-height: 1.8; }
+        header { padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; background-color: #fff; }
+        .logo { font-size: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: #888; }
+        
+        .container { max-width: 800px; margin: 80px auto; padding: 0 20px; }
+        h1 { font-size: 32px; font-weight: normal; letter-spacing: 4px; margin-bottom: 30px; text-transform: uppercase; text-align: center; }
+        
+        .about-text { font-size: 16px; color: #444; margin-bottom: 40px; text-align: justify; }
+        
+        .details-grid { display: flex; gap: 50px; }
+        .details-col { flex: 1; }
+        .section-title { font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; border-bottom: 1px solid #222; display: inline-block; padding-bottom: 5px; }
+        ul { list-style-type: none; }
+        ul li { margin-bottom: 10px; font-size: 15px; color: #555; }
+
+        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; }
+        footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        footer a:hover { color: #000; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            nav a { margin: 0; }
+            .details-grid { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Yusuf Batuhan Kıraç</div>
+        <nav>
+            <a href="index.html">Anasayfa</a>
+            <a href="hakkinda.html">Hakkında</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Hakkında</h1>
+        <div class="about-text">
+            <p>2004 doğumluyum. 178 boyunda 80 kiloyum. Oyunculuğa 7 yaşında başladım ve küçük yaşlarda bir hobi olan tiyatro artık mesleğim haline geldi. Hem sahnede hem de kamera karşısında oyunculuk deneyimlerim var. Ayrıca tiyatro kuruluşlarında aktif olarak oyuncu, teknik ekip ve asistan olarak da görev almaktayım. Amacım her projede kendimi geliştirerek daha iyi bir performans sergilemektir.</p>
+        </div>
+
+        <div class="details-grid">
+            <div class="details-col">
+                <div class="section-title">Beceriler</div>
+                <ul>
+                    <li>Diksiyon</li>
+                    <li>Oyunculuk</li>
+                    <li>Sahne Sanatları</li>
+                    <li>Kamera Önü Çalışması</li>
+                    <li>Yaratıcılık</li>
+                </ul>
+            </div>
+            <div class="details-col">
+                <div class="section-title">Diller & Kurslar</div>
+                <ul>
+                    <li>Türkçe</li>
+                    <li>İngilizce</li>
+                    <li style="margin-top: 15px;"><strong>Kurslar:</strong></li>
+                    <li>Tiyatro Oyunculuğu Eğitimi (1 Yıl)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://instagram.com/batuhan.kirac_" target="_blank">Instagram: @batuhan.kirac_</a>
+        <span>© 2026 Yusuf Batuhan Kıraç. Tüm Hakları Saklıdır.</span>
+    </footer>
+
+</body>
+</html>
