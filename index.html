@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuf Batuhan Kıraç - Portfolyo</title>
+    <style>
+        /* Genel Tasarım Ayarları */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #fdfdfd;
+            color: #222;
+            line-height: 1.6;
+        }
+        
+        /* Üst Menü (Header) */
+        header {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+            background-color: #fff;
+        }
+        .logo {
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #888; }
+        
+        /* Ana İçerik Alanı */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        /* Fotoğraf Alanı */
+        .profile-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #eee;
+            aspect-ratio: 3/4;
+            /* Fotoğrafını eklemek için aşağıdaki url içindeki linki kendi fotoğraf linkinle değiştirebilirsin */
+            background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Bilgi Alanı */
+        .content {
+            flex: 1.5;
+            min-width: 300px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: normal;
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+        }
+        
+        /* Liste Başlıkları */
+        .section-title {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #222;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        /* Liste Elemanları */
+        .list-item {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: flex-start;
+            font-size: 15px;
+        }
+        .list-year {
+            width: 90px;
+            color: #666;
+            font-size: 14px;
+        }
+        .list-details { flex: 1; }
+
+        /* Alt Kısım */
+        footer {
+            margin-top: 80px;
+            padding: 40px 50px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            nav a { margin: 0; }
+            .container { flex-direction: column; margin: 30px auto; }
+            .profile-image { aspect-ratio: 1/1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Yusuf Batuhan Kıraç</div>
+        <nav>
+            <a href="#">Anasayfa</a>
+            <a href="#">Hakkında</a>
+            <a href="#">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Sol Taraftaki Fotoğraf Alanı -->
+        <div class="profile-image"></div>
+
+        <!-- Sağ Taraftaki Özgeçmiş Alanı -->
+        <div class="content">
+            <h1>Yusuf Batuhan Kıraç</h1>
+            <div class="subtitle">Sahne Sanatları & Tiyatro</div>
+
+            <div class="section-title">Eğitim</div>
+            <div class="list-item">
+                <div class="list-year">2027</div>
+                <div class="list-details">Bahçeşehir Üniversitesi – Sahne Sanatları (Lisans)</div>
+            </div>
+
+            <div class="section-title">Oyunculuk & Karakter Çalışmaları</div>
+            <div class="list-item">
+                <div class="list-year">Rol</div>
+                <div class="list-details">Torvald Helmer – Bir Bebek Evi</div>
+            </div>
+            <div class="list-item">
+                <div class="list-year">Rol</div>
+                <div class="list-details">Tom, Jim O'Connor – Sırça Hayvan Koleksiyonu</div>
+            </div>
+            <div class="list-item">
+                <div class="list-year">Rol</div>
+                <div class="list-details">Gergedanlar (Dramaturjik İnceleme)</div>
+            </div>
+            <div class="list-item">
+                <div class="list-year">Metot</div>
+                <div class="list-details">Stanislavski Sistemi & Eric Morris Yaklaşımı</div>
+            </div>
+
+            <div class="section-title">Deneyim</div>
+            <div class="list-item">
+                <div class="list-year">2025-Halen</div>
+                <div class="list-details">TCDD – Vagon Teknisyeni</div>
+            </div>
+            
+            <div class="section-title">Projeler</div>
+            <div class="list-item">
+                <div class="list-year">2026</div>
+                <div class="list-details">Kentsel Tasarım Deneyimi (Matris Çalışması)</div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Yusuf Batuhan Kıraç. Tüm Hakları Saklıdır.
+    </footer>
+
+</body>
+</html>
