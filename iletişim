@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Yusuf Batuhan Kıraç</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #fdfdfd; color: #222; line-height: 1.6; }
+        header { padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; background-color: #fff; }
+        .logo { font-size: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: #888; }
+        
+        .container { max-width: 600px; margin: 80px auto; padding: 0 20px; }
+        h1 { font-size: 32px; font-weight: normal; letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase; text-align: center; }
+        p.desc { text-align: center; color: #666; margin-bottom: 40px; font-size: 15px; }
+
+        form { display: flex; flex-direction: column; gap: 20px; }
+        input, textarea { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; font-family: inherit; }
+        textarea { resize: vertical; min-height: 150px; }
+        button { padding: 15px; background-color: #222; color: #fff; border: none; font-size: 16px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; }
+        button:hover { background-color: #555; }
+
+        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; }
+        footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        footer a:hover { color: #000; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            nav a { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Yusuf Batuhan Kıraç</div>
+        <nav>
+            <a href="index.html">Anasayfa</a>
+            <a href="hakkinda.html">Hakkında</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>İletişim</h1>
+        <p class="desc">Projeler ve iş birlikleri için aşağıdaki formu doldurarak bana doğrudan e-posta gönderebilirsiniz.</p>
+
+        <!-- Mailto yapısı mesajı doğrudan e-posta istemcisine aktarır -->
+        <form action="mailto:ybatuhankirac@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="İsim" placeholder="Adınız Soyadınız" required>
+            <input type="email" name="Mail" placeholder="E-posta Adresiniz" required>
+            <textarea name="Mesaj" placeholder="Mesajınız..." required></textarea>
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <footer>
+        <a href="https://instagram.com/batuhan.kirac_" target="_blank">Instagram: @batuhan.kirac_</a>
+        <span>© 2026 Yusuf Batuhan Kıraç. Tüm Hakları Saklıdır.</span>
+    </footer>
+
+</body>
+</html>
