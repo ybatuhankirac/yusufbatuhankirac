@@ -7,20 +7,21 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #fdfdfd; color: #222; line-height: 1.6; overflow-x: hidden; }
-        header { padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; background-color: #fff; }
+        
+        header { padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; background-color: #fff; position: relative; z-index: 10; }
         .logo { font-size: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
         nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s, opacity 0.3s; }
         nav a:hover { color: #888; opacity: 0.7; }
         
+        /* Şık ve Kademeli Giriş Animasyonu */
         @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(25px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Container genişletildi, fotoğraf ve yazı dengesi için gap ayarlandı */
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 40px; display: flex; gap: 60px; align-items: flex-start; animation: fadeUp 0.8s ease-out forwards; }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 40px; display: flex; gap: 60px; align-items: flex-start; }
         
-        /* Fotoğraf masaüstünde daha büyük hale getirildi */
+        /* Fotoğraf Animasyonu */
         .profile-image { 
             flex: 0 0 450px; 
             height: 600px; 
@@ -28,24 +29,37 @@
             background-image: url('profil.jpeg'); 
             background-size: cover; 
             background-position: center;
-            border-radius: 4px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.2s forwards;
         }
         
+        /* İçeriklerin Sırayla Yüklenmesi */
         .content { flex: 1; }
+        .content > * { opacity: 0; animation: fadeUp 0.6s ease-out forwards; }
+        .content > h1 { animation-delay: 0.3s; }
+        .content > .subtitle { animation-delay: 0.4s; }
+        .content > .section-title:nth-of-type(1), .content > .list-item:nth-of-type(1), .content > .list-item:nth-of-type(2) { animation-delay: 0.5s; }
+        .content > .section-title:nth-of-type(2), .content > .list-item:nth-of-type(3), .content > .list-item:nth-of-type(4), .content > .list-item:nth-of-type(5) { animation-delay: 0.6s; }
+        .content > .section-title:nth-of-type(3), .content > .list-item:nth-of-type(6), .content > .list-item:nth-of-type(7) { animation-delay: 0.7s; }
+        .content > .section-title:nth-of-type(4), .content > .list-item:nth-of-type(8), .content > .list-item:nth-of-type(9), .content > .list-item:nth-of-type(10), .content > .list-item:nth-of-type(11), .content > .list-item:nth-of-type(12), .content > .list-item:nth-of-type(13), .content > .list-item:nth-of-type(14), .content > .list-item:nth-of-type(15) { animation-delay: 0.8s; }
+        .content > .section-title:nth-of-type(5), .content > .list-item:nth-of-type(16) { animation-delay: 0.9s; }
+
         h1 { font-size: 32px; font-weight: normal; letter-spacing: 4px; margin-bottom: 5px; text-transform: uppercase; }
         .subtitle { color: #777; font-size: 14px; letter-spacing: 1px; margin-bottom: 35px; }
         
         .section-title { font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 35px; margin-bottom: 15px; border-bottom: 1px solid #222; display: inline-block; padding-bottom: 5px; }
-        .list-item { margin-bottom: 12px; display: flex; justify-content: flex-start; font-size: 15px; transition: transform 0.3s; }
-        .list-item:hover { transform: translateX(5px); }
-        .list-year { width: 135px; color: #666; font-size: 14px; flex-shrink: 0; }
+        .list-item { margin-bottom: 12px; display: flex; justify-content: flex-start; font-size: 15px; transition: transform 0.3s ease, color 0.3s; }
+        .list-item:hover { transform: translateX(8px); color: #555; }
+        .list-year { width: 145px; color: #666; font-size: 14px; flex-shrink: 0; }
         .list-details { flex: 1; }
 
-        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; }
+        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; opacity: 0; animation: fadeUp 1s ease-out 1s forwards; }
         footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; }
         footer a:hover { color: #000; }
 
-        /* Mobil Görünüm Optimizasyonu */
+        /* Mobil Görünüm */
         @media (max-width: 900px) {
             .container { flex-direction: column; align-items: center; max-width: 100%; gap: 40px; padding: 0 20px; }
             .profile-image { flex: none; width: 100%; max-width: 500px; height: 600px; }
@@ -54,11 +68,11 @@
         @media (max-width: 600px) {
             header { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
             nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-            nav a { margin: 0; }
+            nav a { margin: 0; font-size: 11px; }
             .container { margin: 30px auto; gap: 30px; }
-            /* Telefondaki dikey oran ayarlandı */
-            .profile-image { height: 500px; } 
-            .list-item { flex-direction: column; gap: 2px; margin-bottom: 15px; }
+            .profile-image { height: 450px; } 
+            .list-item { flex-direction: column; gap: 4px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px dashed #eee; }
+            .list-item:last-child { border-bottom: none; }
             .list-item:hover { transform: none; }
             .list-year { width: 100%; font-weight: bold; font-size: 13px; color: #444; }
             .list-details { width: 100%; }
@@ -99,7 +113,8 @@
             <div class="list-item"><div class="list-year">Oyuncu</div><div class="list-details">BKM – Güldüy Güldüy Show Çocuk</div></div>
             <div class="list-item"><div class="list-year">Reji Asistanı</div><div class="list-details">Müşterek Kumpanya / Radyo-yu Hümayun (Ses, Teknik ve Reji)</div></div>
             <div class="list-item"><div class="list-year">Asistan</div><div class="list-details">Ara Sahne / Kardeşlerimi Arıyorum (Dekor ve Genel Asistanlık)</div></div>
-            <div class="list-item"><div class="list-year">Devam Ediyor</div><div class="list-details">Koç Mezunlar Tiyatrosu / Sen Hiç Ateş Böceği Gördün mü? (Teknik)</div></div>
+            <div class="list-item"><div class="list-year">Devam Ediyor</div><div class="list-details">Koç Mezunlar Tiyatrosu</div></div>
+            <div class="list-item"><div class="list-year">Teknik</div><div class="list-details">Sen Hiç Ateş Böceği Gördün mü?</div></div>
             <div class="list-item"><div class="list-year">Teknik</div><div class="list-details">Şark Dişçisi</div></div>
             <div class="list-item"><div class="list-year">Teknik</div><div class="list-details">Grease Müzikali</div></div>
             <div class="list-item"><div class="list-year">Teknik</div><div class="list-details">İki Arada Bir Kabare</div></div>
