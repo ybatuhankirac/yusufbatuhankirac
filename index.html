@@ -33,15 +33,34 @@
             animation: fadeUp 0.8s ease-out 0.2s forwards;
         }
         
+        /* Her bir satırın tek tek sırayla yüklenmesi (Şelale Efekti) */
         .content { flex: 1; }
         .content > * { opacity: 0; animation: fadeUp 0.6s ease-out forwards; }
-        .content > h1 { animation-delay: 0.3s; }
-        .content > .subtitle { animation-delay: 0.4s; }
-        .content > .section-title:nth-of-type(1), .content > .list-item:nth-of-type(1), .content > .list-item:nth-of-type(2) { animation-delay: 0.5s; }
-        .content > .section-title:nth-of-type(2), .content > .list-item:nth-of-type(3), .content > .list-item:nth-of-type(4), .content > .list-item:nth-of-type(5) { animation-delay: 0.6s; }
-        .content > .section-title:nth-of-type(3), .content > .list-item:nth-of-type(6), .content > .list-item:nth-of-type(7) { animation-delay: 0.7s; }
-        .content > .section-title:nth-of-type(4), .content > .list-item:nth-of-type(8), .content > .list-item:nth-of-type(9), .content > .list-item:nth-of-type(10), .content > .list-item:nth-of-type(11), .content > .list-item:nth-of-type(12), .content > .list-item:nth-of-type(13), .content > .list-item:nth-of-type(14), .content > .list-item:nth-of-type(15) { animation-delay: 0.8s; }
-        .content > .section-title:nth-of-type(5), .content > .list-item:nth-of-type(16) { animation-delay: 0.9s; }
+        .content > *:nth-child(1) { animation-delay: 0.20s; }
+        .content > *:nth-child(2) { animation-delay: 0.25s; }
+        .content > *:nth-child(3) { animation-delay: 0.30s; }
+        .content > *:nth-child(4) { animation-delay: 0.35s; }
+        .content > *:nth-child(5) { animation-delay: 0.40s; }
+        .content > *:nth-child(6) { animation-delay: 0.45s; }
+        .content > *:nth-child(7) { animation-delay: 0.50s; }
+        .content > *:nth-child(8) { animation-delay: 0.55s; }
+        .content > *:nth-child(9) { animation-delay: 0.60s; }
+        .content > *:nth-child(10) { animation-delay: 0.65s; }
+        .content > *:nth-child(11) { animation-delay: 0.70s; }
+        .content > *:nth-child(12) { animation-delay: 0.75s; }
+        .content > *:nth-child(13) { animation-delay: 0.80s; }
+        .content > *:nth-child(14) { animation-delay: 0.85s; }
+        .content > *:nth-child(15) { animation-delay: 0.90s; }
+        .content > *:nth-child(16) { animation-delay: 0.95s; }
+        .content > *:nth-child(17) { animation-delay: 1.00s; }
+        .content > *:nth-child(18) { animation-delay: 1.05s; }
+        .content > *:nth-child(19) { animation-delay: 1.10s; }
+        .content > *:nth-child(20) { animation-delay: 1.15s; }
+        .content > *:nth-child(21) { animation-delay: 1.20s; }
+        .content > *:nth-child(22) { animation-delay: 1.25s; }
+        .content > *:nth-child(23) { animation-delay: 1.30s; }
+        .content > *:nth-child(24) { animation-delay: 1.35s; }
+        .content > *:nth-child(25) { animation-delay: 1.40s; }
 
         h1 { font-size: 32px; font-weight: normal; letter-spacing: 4px; margin-bottom: 5px; text-transform: uppercase; }
         .subtitle { color: #777; font-size: 14px; letter-spacing: 1px; margin-bottom: 35px; }
@@ -52,7 +71,8 @@
         .list-year { width: 145px; color: #666; font-size: 14px; flex-shrink: 0; }
         .list-details { flex: 1; }
 
-        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; opacity: 0; animation: fadeUp 1s ease-out 1s forwards; }
+        /* Footer'ın en son yüklenmesi */
+        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; opacity: 0; animation: fadeUp 1s ease-out 1.6s forwards; }
         footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; }
         footer a:hover { color: #000; }
 
