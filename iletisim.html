@@ -7,7 +7,8 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #fdfdfd; color: #222; line-height: 1.6; overflow-x: hidden; }
-        header { padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; background-color: #fff; }
+        
+        header { padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; background-color: #fff; position: relative; z-index: 10; }
         .logo { font-size: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
         nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
         nav a:hover { color: #888; }
@@ -17,26 +18,33 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        .container { max-width: 600px; margin: 80px auto; padding: 0 20px; animation: fadeUp 0.8s ease-out forwards; }
+        .container { max-width: 600px; margin: 80px auto; padding: 0 20px; }
+        .container > * { opacity: 0; animation: fadeUp 0.6s ease-out forwards; }
+        .container > h1 { animation-delay: 0.2s; }
+        .container > p { animation-delay: 0.4s; }
+        .container > form { animation-delay: 0.6s; }
+
         h1 { font-size: 32px; font-weight: normal; letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase; text-align: center; }
         p.desc { text-align: center; color: #666; margin-bottom: 40px; font-size: 15px; }
 
-        form { display: flex; flex-direction: column; gap: 20px; }
-        input, textarea { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; font-family: inherit; transition: border-color 0.3s; }
-        input:focus, textarea:focus { outline: none; border-color: #222; }
+        form { display: flex; flex-direction: column; gap: 20px; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
+        input, textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px; font-family: inherit; transition: border-color 0.3s, box-shadow 0.3s; background-color: #fafafa; }
+        input:focus, textarea:focus { outline: none; border-color: #222; background-color: #fff; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
         textarea { resize: vertical; min-height: 150px; }
-        button { padding: 15px; background-color: #222; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s, transform 0.2s; }
-        button:hover { background-color: #444; transform: scale(1.02); }
+        button { padding: 18px; background-color: #222; color: #fff; border: none; border-radius: 4px; font-size: 15px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; transition: background 0.3s, transform 0.2s; }
+        button:hover { background-color: #444; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        button:active { transform: translateY(0); }
 
-        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; }
+        footer { margin-top: 80px; padding: 40px 50px; text-align: center; border-top: 1px solid #eaeaea; font-size: 12px; color: #999; letter-spacing: 1px; display: flex; flex-direction: column; gap: 10px; opacity: 0; animation: fadeUp 1s ease-out 0.8s forwards; }
         footer a { color: #555; text-decoration: none; font-weight: bold; transition: color 0.3s; }
         footer a:hover { color: #000; }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
             nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-            nav a { margin: 0; }
+            nav a { margin: 0; font-size: 11px; }
             .container { margin: 40px auto; }
+            form { padding: 25px; }
         }
     </style>
 </head>
